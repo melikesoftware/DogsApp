@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data
+        >
+        <variable
+            name="selectedDog"
+            type="com.example.dogsapp.model.Dog" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.dogsapp.view.DogsFragment">
+
+        <ImageView
+            android:id="@+id/dogsImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:minHeight="200dp"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+           android:download_url="@{selectedDog.url}" />
+
+        <TextView
+            android:id="@+id/dogName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dogsImage"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:text="@{selectedDog.dogName}"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dogOrigin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dogName"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:text="@{selectedDog.origin}"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/dogLife"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dogOrigin"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:text="@{selectedDog.lifeSpan}"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="16sp" />
+
+
+
+        <TextView
+            android:id="@+id/dogTemperament"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dogLife"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:text="@{selectedDog.temperament}"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+</layout>
